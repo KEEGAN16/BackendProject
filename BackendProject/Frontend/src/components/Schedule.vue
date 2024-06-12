@@ -1,0 +1,460 @@
+<template>
+    <div id="app">
+      <div class="navigation-area primary-shadow">
+        <div class="top-info-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="contact-info-bar">
+                  <ul>
+                    <li><i class="fa fa-map-marker"></i> 49 West 32nd Street, New York</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-6 text-end mobile-left">
+                <div class="contact-info-bar">
+                  <ul>
+                    <li><i class="fa fa-phone"></i> +02 525 486 232</li>
+                    <li><i class="fa fa-envelope"></i> eelias.cse@gmail.com</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Site Logo" /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Speakers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Schedule</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sponsors</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Pages
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                    <li><a class="dropdown-item" href="#">Accommodation</a></li>
+                    <li><a class="dropdown-item" href="#">Gallery</a></li>
+                    <li><a class="dropdown-item" href="#">Price Table</a></li>
+                    <li><a class="dropdown-item" href="#">Blog</a></li>
+                    <li><a class="dropdown-item" href="#">Blog Single</a></li>
+                    <li><a class="dropdown-item" href="#">404 Error</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item ms-3">
+                  <a class="btn btn-primary" href="#">Reserve Your Seat</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+  
+      <div class="page-heading">
+        <div class="overlay">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="breadcrumb">
+                  <li><a href="#">Home</a></li>
+                  <li class="active">Schedule</li>
+                </ul>
+                <h2>Schedule</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="schedule-area page-section gray-bg">
+        <div class="container">
+          <div class="schedules">
+            <div class="row no-margin">
+              <div class="col-md-3 no-padding">
+                <div class="schedule-title">
+                  <h5>Date</h5>
+                </div>
+                <div class="schedule-date">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#date-1" data-bs-toggle="tab">
+                        <h4>Day 1</h4>
+                        <h5>24 DECEMBER</h5>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#date-2" data-bs-toggle="tab">
+                        <h4>Day 2</h4>
+                        <h5>25 DECEMBER</h5>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#date-3" data-bs-toggle="tab">
+                        <h4>Day 3</h4>
+                        <h5>26 DECEMBER</h5>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-9 no-padding">
+                <div class="schedule-details">
+                  <div class="schedule-title">
+                    <div class="row no-margin">
+                      <div class="col-sm-3 no-padding">
+                        <h5>Time</h5>
+                      </div>
+                      <div class="col-sm-9 no-padding">
+                        <h5>SESSION TITLE</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="date-1">
+                      <div class="accordion" id="accordion1">
+                        <div class="accordion-item" v-for="(session, index) in sessions1" :key="index">
+                          <h2 class="accordion-header" :id="'heading1-' + index">
+                            <button
+                              class="accordion-button"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              :data-bs-target="'#collapse1-' + index"
+                              aria-expanded="true"
+                              :aria-controls="'collapse1-' + index"
+                            >
+                              <div class="row no-margin">
+                                <div class="col-sm-3 no-padding">
+                                  <h5>{{ session.time }}</h5>
+                                </div>
+                                <div class="col-sm-9 no-padding">
+                                  <h5>{{ session.title }}</h5>
+                                </div>
+                              </div>
+                            </button>
+                          </h2>
+                          <div
+                            :id="'collapse1-' + index"
+                            class="accordion-collapse collapse"
+                            :class="{ show: index === 0 }"
+                            :aria-labelledby="'heading1-' + index"
+                            data-bs-parent="#accordion1"
+                          >
+                            <div class="accordion-body">
+                              <div class="row no-margin">
+                                <div class="col-sm-3 no-padding">
+                                  <div class="schedule-img">
+                                    <img :src="session.img" alt="schedule" />
+                                  </div>
+                                </div>
+                                <div class="col-sm-9 no-padding">
+                                  <div class="schedule-info">
+                                    <p>{{ session.description }}</p>
+                                    <h5>
+                                      <span>With</span> : {{ session.speaker }}
+                                      <small>Designer at <a href="">{{ session.company }}</a></small>
+                                    </h5>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="tab-pane fade" id="date-2">
+                      <div class="accordion" id="accordion2">
+                        <div class="accordion-item" v-for="(session, index) in sessions2" :key="index">
+                          <h2 class="accordion-header" :id="'heading2-' + index">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              :data-bs-target="'#collapse2-' + index"
+                              aria-expanded="false"
+                              :aria-controls="'collapse2-' + index"
+                            >
+                              <div class="row no-margin">
+                                <div class="col-sm-3 no-padding">
+                                  <h5>{{ session.time }}</h5>
+                                </div>
+                                <div class="col-sm-9 no-padding">
+                                  <h5>{{ session.title }}</h5>
+                                </div>
+                              </div>
+                            </button>
+                          </h2>
+                          <div
+                            :id="'collapse2-' + index"
+                            class="accordion-collapse collapse"
+                            :aria-labelledby="'heading2-' + index"
+                            data-bs-parent="#accordion2"
+                          >
+                            <div class="accordion-body">
+                              <div class="row no-margin">
+                                <div class="col-sm-3 no-padding">
+                                  <div class="schedule-img">
+                                    <img :src="session.img" alt="schedule" />
+                                  </div>
+                                </div>
+                                <div class="col-sm-9 no-padding">
+                                  <div class="schedule-info">
+                                    <p>{{ session.description }}</p>
+                                    <h5>
+                                      <span>With</span> : {{ session.speaker }}
+                                      <small>Designer at <a href="">{{ session.company }}</a></small>
+                                    </h5>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="tab-pane fade" id="date-3">
+                      <div class="accordion" id="accordion3">
+                        <div class="accordion-item" v-for="(session, index) in sessions3" :key="index">
+                          <h2 class="accordion-header" :id="'heading3-' + index">
+                            <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              :data-bs-target="'#collapse3-' + index"
+                              aria-expanded="false"
+                              :aria-controls="'collapse3-' + index"
+                            >
+                              <div class="row no-margin">
+                                <div class="col-sm-3 no-padding">
+                                  <h5>{{ session.time }}</h5>
+                                </div>
+                                <div class="col-sm-9 no-padding">
+                                  <h5>{{ session.title }}</h5>
+                                </div>
+                              </div>
+                            </button>
+                          </h2>
+                          <div
+                            :id="'collapse3-' + index"
+                            class="accordion-collapse collapse"
+                            :aria-labelledby="'heading3-' + index"
+                            data-bs-parent="#accordion3"
+                          >
+                            <div class="accordion-body">
+                              <div class="row no-margin">
+                                <div class="col-sm-3 no-padding">
+                                  <div class="schedule-img">
+                                    <img :src="session.img" alt="schedule" />
+                                  </div>
+                                </div>
+                                <div class="col-sm-9 no-padding">
+                                  <div class="schedule-info">
+                                    <p>{{ session.description }}</p>
+                                    <h5>
+                                      <span>With</span> : {{ session.speaker }}
+                                      <small>Designer at <a href="">{{ session.company }}</a></small>
+                                    </h5>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="footer-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="single-footer-widget">
+                <a href="#" class="footer-logo">
+                  <img src="images/footer-logo.png" alt="logo" />
+                </a>
+                <p>Evemat is a Responsive HTML Event Template based on material design language invented by Google.</p>
+                <ul class="footer-social">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                  <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="single-footer-widget">
+                <h4>Subscribe Me!</h4>
+                <form action="subscribe.php" class="subscription-form">
+                  <input type="text" placeholder="Your Email" />
+                  <input type="submit" value="go" />
+                </form>
+                <p>Your Information is safe with us.</p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="single-footer-widget">
+                <h4>Mini Gallery</h4>
+                <ul class="gallery-list">
+                  <li v-for="(image, index) in galleryImages" :key="index"><img :src="image" alt="gallery" /></li>
+                </ul>
+                <a href="#" class="more-image">More Images</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="footer-bar-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <span>Copyright 2015. Designed By <a href="#">BestPixels</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        sessions1: [
+          {
+            time: "09:00 Am - 02:00PM",
+            title: "Introducing Material Design",
+            img: "images/schedule/1.jpg",
+            description:
+              "Material Design is a new design language invented by Google. It will dominate the design industry for the next few years. Every designer should have some knowledge about material design.",
+            speaker: "Zarina Kame",
+            company: "Google",
+          },
+          {
+            time: "02:00 Pm - 05:00PM",
+            title: "Where to start with Material Design",
+            img: "images/schedule/1.jpg",
+            description:
+              "Material Design is a new design language invented by Google. It will dominate the design industry for the next few years. Every designer should have some knowledge about material design.",
+            speaker: "Zarina Kame",
+            company: "Google",
+          },
+          {
+            time: "05:00 Pm - 08:00PM",
+            title: "Material Design for Websites",
+            img: "images/schedule/1.jpg",
+            description:
+              "Material Design is a new design language invented by Google. It will dominate the design industry for the next few years. Every designer should have some knowledge about material design.",
+            speaker: "Zarina Kame",
+            company: "Google",
+          },
+        ],
+        sessions2: [
+          {
+            time: "09:00 Am - 02:00PM",
+            title: "Introducing Material Design",
+            img: "images/schedule/1.jpg",
+            description:
+              "Material Design is a new design language invented by Google. It will dominate the design industry for the next few years. Every designer should have some knowledge about material design.",
+            speaker: "Zarina Kame",
+            company: "Google",
+          },
+          {
+            time: "02:00 Pm - 05:00PM",
+            title: "Where to start with Material Design",
+            img: "images/schedule/1.jpg",
+            description:
+              "Material Design is a new design language invented by Google. It will dominate the design industry for the next few years. Every designer should have some knowledge about material design.",
+            speaker: "Zarina Kame",
+            company: "Google",
+          },
+        ],
+        sessions3: [
+          {
+            time: "09:00 Am - 02:00PM",
+            title: "Introducing Material Design",
+            img: "images/schedule/1.jpg",
+            description:
+              "Material Design is a new design language invented by Google. It will dominate the design industry for the next few years. Every designer should have some knowledge about material design.",
+            speaker: "Zarina Kame",
+            company: "Google",
+          },
+          {
+            time: "02:00 Pm - 05:00PM",
+            title: "Where to start with Material Design",
+            img: "images/schedule/1.jpg",
+            description:
+              "Material Design is a new design language invented by Google. It will dominate the design industry for the next few years. Every designer should have some knowledge about material design.",
+            speaker: "Zarina Kame",
+            company: "Google",
+          },
+          {
+            time: "05:00 Pm - 08:00PM",
+            title: "Material Design for Websites",
+            img: "images/schedule/1.jpg",
+            description:
+              "Material Design is a new design language invented by Google. It will dominate the design industry for the next few years. Every designer should have some knowledge about material design.",
+            speaker: "Zarina Kame",
+            company: "Google",
+          },
+        ],
+        galleryImages: [
+          "images/gallery/thumb/1.jpg",
+          "images/gallery/thumb/2.jpg",
+          "images/gallery/thumb/3.jpg",
+          "images/gallery/thumb/4.jpg",
+          "images/gallery/thumb/2.jpg",
+          "images/gallery/thumb/1.jpg",
+        ],
+      };
+    },
+  };
+  </script>
+  
+  <style scoped>
+  /* Add your custom styles here */
+  </style>
+  
