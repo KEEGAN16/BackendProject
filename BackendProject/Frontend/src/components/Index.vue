@@ -9,7 +9,7 @@
                   <ul>
                     <li>
                       <i class="fa fa-map-marker"></i>Študentské centrum UKF,
-                      Dražovská 2, Nitra
+                      Dražovská 2/3, Nitra
                     </li>
                   </ul>
                 </div>
@@ -93,8 +93,8 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12 text-center">
-                  <h3>14 - 26 December 2016 , <span>New York</span></h3>
-                  <h1><small>Material Designer</small> Conference</h1>
+                  <h3>15 - 30 December 2024 , <span>Nitra</span></h3>
+                  <h1><small>Cool stuff</small> Conference</h1>
                   <ul class="buttons">
                     <li><a href="#" class="btn btn-outline-light">Register Now</a></li>
                     <li><a href="#" class="btn btn-outline-light">Learn More</a></li>
