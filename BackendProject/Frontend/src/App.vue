@@ -36,36 +36,44 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"
+            <router-link class="navbar-brand" to="/"
               ><img src="images/logo.png" alt="Site Logo"
-            /></a>
+            /></router-link>
           </div>
           <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="ml15">
-                <a class="button alt" href="price-table.html"
-                  >Reserve Your Seat</a
+                <router-link class="button alt" to="/price-table"
+                  >Reserve Your Seat</router-link
                 >
               </li>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="speakers.html">Speakers</a></li>
-              <li><a href="schedule.html">Schedule</a></li>
-              <li class="current"><a href="sponsors.html">Sponsors</a></li>
+              <li><router-link to="/">Home</router-link></li>
+              <li><router-link to="/speakers">Speakers</router-link></li>
+              <li><router-link to="/schedule">Schedule</router-link></li>
+              <li class="current">
+                <router-link to="/sponsors">Sponsors</router-link>
+              </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                   >Pages <span class="caret"></span
                 ></a>
                 <ul class="dropdown-menu">
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="accommodation.html">Accommodation</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="price-table.html">Price Table</a></li>
-                  <li><a href="blog.html">Blog</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>
-                  <li><a href="404.html">404 Error</a></li>
+                  <li><router-link to="/about">About</router-link></li>
+                  <li>
+                    <router-link to="/accommodation">Accommodation</router-link>
+                  </li>
+                  <li><router-link to="/gallery">Gallery</router-link></li>
+                  <li>
+                    <router-link to="/price-table">Price Table</router-link>
+                  </li>
+                  <li><router-link to="/blog">Blog</router-link></li>
+                  <li>
+                    <router-link to="/blog-single">Blog Single</router-link>
+                  </li>
+                  <li><router-link to="/404">404 Error</router-link></li>
                 </ul>
               </li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><router-link to="/contact">Contact</router-link></li>
             </ul>
           </div>
         </div>
@@ -79,7 +87,7 @@
           <div class="row">
             <div class="col-md-12">
               <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><router-link to="/">Home</router-link></li>
                 <li class="active">Sponsors</li>
               </ul>
               <h2>Sponsors</h2>
@@ -268,7 +276,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "assets/css/bootstrap.css";
 @import "lib/Magnific-Popup/dist/magnific-popup.css";
 @import "lib/Font-Awesome/css/font-awesome.min.css";
