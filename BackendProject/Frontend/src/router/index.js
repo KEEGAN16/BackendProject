@@ -1,4 +1,3 @@
-// src/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../components/Index.vue";
 import Speakers from "../components/Speakers.vue";
@@ -25,7 +24,7 @@ const routes = [
   { path: "/blog", component: Blog },
   { path: "/blog-single", component: BlogSingle },
   { path: "/contact", component: Contact },
-  { path: "/:pathMatch(.*)*", component: NotFound }, // Catch-all route for 404
+  { path: "/:pathMatch(.*)*", component: NotFound },
 ];
 
 const router = createRouter({
