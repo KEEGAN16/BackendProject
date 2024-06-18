@@ -126,92 +126,24 @@
         </div>
       </nav>
     </div>
+
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      activeTab: "SilverSponsors",
-      showModal: false,
-      silverSponsors: [
-        { id: 1, image: "images/sponsor1.png" },
-        { id: 2, image: "images/sponsor2.png" },
-        { id: 3, image: "images/sponsor3.png" },
-        { id: 4, image: "images/sponsor4.png" },
-      ],
-      goldSponsors: [
-        { id: 5, image: "images/sponsor5.png" },
-        { id: 6, image: "images/sponsor6.png" },
-        { id: 7, image: "images/sponsor7.png" },
-        { id: 8, image: "images/sponsor8.png" },
-      ],
-      platinumSponsors: [
-        { id: 9, image: "images/sponsor9.png" },
-        { id: 10, image: "images/sponsor10.png" },
-        { id: 11, image: "images/sponsor11.png" },
-        { id: 12, image: "images/sponsor12.png" },
-      ],
-      form: {
-        name: "",
-        email: "",
-        phone: "",
-        website: "",
-        message: "",
-      },
-    };
-  },
-  methods: {
-    submitForm() {
-      // Handle form submission logic
-      console.log("Form submitted:", this.form);
-      this.showModal = false;
-    },
-  },
-};
+<script setup>
+import { useUserStore } from "@/stores/UserStore.js";
+import { useConferenceStore } from "@/stores/ConferenceStore.js";
+
+const userStore = useUserStore();
+const conferenceStore = useConferenceStore();
+
+onMounted(() => {
+  userStore.fetchUser();
+  conferenceStore.checkConference();
+});
 </script>
 
 <style scoped>
-@import "assets/css/bootstrap.css";
-@import "lib/Magnific-Popup/dist/magnific-popup.css";
-@import "lib/Font-Awesome/css/font-awesome.min.css";
-@import "lib/owl.carousel/dist/assets/owl.carousel.min.css";
-@import "lib/owl.carousel/dist/assets/owl.theme.default.min.css";
-@import "lib/aos/dist/aos.css";
-@import "css/style.css";
-
-/* Scoped styles */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-container {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 600px;
-  width: 100%;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.close {
-  background: none;
-  border: none;
-  font-size: 1.5em;
-}
+/* Добавьте ваши стили здесь */
 </style>
